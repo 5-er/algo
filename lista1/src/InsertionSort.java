@@ -19,18 +19,19 @@ public class InsertionSort extends SortBase{
     @Override
     public ArrayList<Integer> sort(ArrayList<Integer> arr) {
         int tmp;
+        ArrayList<Integer> temparr = new ArrayList<>(arr);
         
-        for(int i=0 ; i<arr.size() ; i++) {
-            for(int j=0 ; j<arr.size() ; j++) {
-                if(arr.get(i) > arr.get(j)){}
+        for(int i=0 ; i<temparr.size() ; i++) {
+            for(int j=0 ; j<temparr.size() ; j++) {
+                if(temparr.get(i) > temparr.get(j)){}
                 else {
-                    tmp = arr.get(i);
-                    arr.set(i, arr.get(j));
-                    arr.set(j, tmp);
+                    tmp = temparr.get(i);
+                    temparr.set(i, temparr.get(j));
+                    temparr.set(j, tmp);
                 }
             }
         }
-        return arr;
+        return temparr;
     }
     
 }
