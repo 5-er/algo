@@ -1,5 +1,7 @@
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Random;
 
 /**
@@ -18,7 +20,9 @@ abstract class  SortBase {
      */
     public SortBase(int n) {
         maxInt = n;
-        selectRandom();
+        numbers = new ArrayList<>(maxInt-1);
+        perm();
+//        selectRandom();
         countInv(numbers);
     }
     /**
@@ -26,9 +30,14 @@ abstract class  SortBase {
      */
     private void selectRandom() {
         rand = new Random();
-        numbers = new ArrayList<>(maxInt-1);
         for(int i=0 ; i<maxInt-1 ; i++)
             numbers.add(rand.nextInt(maxInt-1));
+    }
+    
+    private void perm() {
+        for(int i=0 ; i<maxInt ; i++)
+            numbers.add(i);
+        Collections.shuffle(numbers);
     }
     
     private void countInv(ArrayList<Integer> n) {
