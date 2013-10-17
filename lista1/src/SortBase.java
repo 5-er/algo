@@ -1,6 +1,5 @@
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Random;
 
@@ -10,7 +9,7 @@ import java.util.Random;
  */
 abstract class  SortBase {
     private int maxInt;
-    private long inv;
+    private long inv, comp;
     private ArrayList<Integer> numbers, sorted;
     private Random rand;
     
@@ -41,14 +40,18 @@ abstract class  SortBase {
     }
     
     private void countInv(ArrayList<Integer> n) {
-        long inv = 0;
+        inv = 0;
         for (int i = 0; i < n.size(); i++) {
-            for (int j = i; j < n.size(); j++) {
+            for (int j = i+1; j < n.size(); j++) {
                 if (n.get(i) > n.get(j)) {
                     inv++;
                 }
             }
         }
+    }
+    
+    public long getInv() {
+        return inv;
     }
     
     public abstract ArrayList<Integer> sort(ArrayList<Integer> arr);
@@ -78,5 +81,13 @@ abstract class  SortBase {
     
     public ArrayList<Integer> getSorted() {
         return sorted;
+    }
+    
+    public void setComparsions(long n) {
+        comp = n;
+    }
+    
+    public long getComparsions() {
+        return comp;
     }
 }

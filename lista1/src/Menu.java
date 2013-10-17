@@ -14,5 +14,6 @@ public class Menu {
         is.setSorted(is.sort(is.getNumbers()));
         is.showNumbers();
         is.showSorted();
+        System.out.println("Inversions "+is.getInv()+" Comparisons "+is.getComparsions());
     }
 }

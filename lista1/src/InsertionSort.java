@@ -18,6 +18,7 @@ public class InsertionSort extends SortBase {
     @Override
     public ArrayList<Integer> sort(ArrayList<Integer> arr) {
         int tmp;
+        long comp = 0;
         ArrayList<Integer> temparr = new ArrayList<>(arr);
 
         for (int i = 1; i < temparr.size(); i++) {
@@ -26,9 +27,11 @@ public class InsertionSort extends SortBase {
             while (j > 0 && tmp < temparr.get(j - 1)) {
                 temparr.set(j, temparr.get(j - 1));
                 j--;
+                comp++;
             }
             temparr.set(j, tmp);
         }
+        setComparsions(comp);
         return temparr;
     }
 }
