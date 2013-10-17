@@ -8,6 +8,7 @@ import java.util.Random;
  */
 abstract class  SortBase {
     private int maxInt;
+    private long inv;
     private ArrayList<Integer> numbers, sorted;
     private Random rand;
     
@@ -18,13 +19,27 @@ abstract class  SortBase {
     public SortBase(int n) {
         maxInt = n;
         selectRandom();
+        countInv(numbers);
     }
-    //function filling numbers array with random numbers from 0 to maxInt
+    /**
+     * function filling numbers array with random numbers from 0 to maxInt
+     */
     private void selectRandom() {
         rand = new Random();
         numbers = new ArrayList<>(maxInt-1);
         for(int i=0 ; i<maxInt-1 ; i++)
             numbers.add(rand.nextInt(maxInt-1));
+    }
+    
+    private void countInv(ArrayList<Integer> n) {
+        long inv = 0;
+        for (int i = 0; i < n.size(); i++) {
+            for (int j = i; j < n.size(); j++) {
+                if (n.get(i) > n.get(j)) {
+                    inv++;
+                }
+            }
+        }
     }
     
     public abstract ArrayList<Integer> sort(ArrayList<Integer> arr);
