@@ -11,6 +11,7 @@ import java.util.List;
  * @author krystian
  */
 public class MergeSort extends SortBase {
+    private long comp = 0;
 
     public MergeSort(int n) {
         super(n);
@@ -31,6 +32,7 @@ public class MergeSort extends SortBase {
             left = sort(left);
             right = sort(right);
             result = merge(left, right);
+            setComparsions(comp);
             return result;
         }
     }
@@ -40,6 +42,7 @@ public class MergeSort extends SortBase {
         
         while (left.size() > 0 && right.size() > 0) {
             if (left.get(0) <= right.get(0)) {
+                comp++;
                 temp.add(left.get(0));
                 left = left.subList(1, left.size());
             } else {

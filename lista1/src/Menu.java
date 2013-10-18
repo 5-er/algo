@@ -15,9 +15,14 @@ public class Menu {
 //        is.showNumbers();
 //        is.showSorted();
 //        System.out.println("Inversions "+is.getInv()+" Comparisons "+is.getComparsions());
-        MergeSort ms = new MergeSort(50);
-        ms.setSorted(ms.sort(ms.getNumbers()));
-        ms.showNumbers();
-        ms.showSorted();
+//        MergeSort ms = new MergeSort(50);
+//        ms.setSorted(ms.sort(ms.getNumbers()));
+//        ms.showNumbers();
+//        ms.showSorted();
+//        System.out.println("Inversions "+ms.getInv()+" Comparisons "+ms.getComparsions());
+        HeapSort hs = new HeapSort(10);
+        hs.setSorted(hs.sort(hs.getNumbers()));
+        hs.showNumbers();
+        
     }
 }
