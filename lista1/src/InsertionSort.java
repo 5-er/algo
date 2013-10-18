@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.List;
 
 /*
  * To change this template, choose Tools | Templates
@@ -16,10 +17,10 @@ public class InsertionSort extends SortBase {
     }
 
     @Override
-    public ArrayList<Integer> sort(ArrayList<Integer> arr) {
+    public List<Integer> sort(List<Integer> arr) {
         int tmp;
         long comp = 0;
-        ArrayList<Integer> temparr = new ArrayList<>(arr);
+        List<Integer> temparr = new ArrayList<>(arr);
 
         for (int i = 1; i < temparr.size(); i++) {
             int j = i;

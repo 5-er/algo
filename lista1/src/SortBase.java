@@ -1,6 +1,7 @@
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -10,7 +11,7 @@ import java.util.Random;
 abstract class  SortBase {
     private int maxInt;
     private long inv, comp;
-    private ArrayList<Integer> numbers, sorted;
+    private List<Integer> numbers, sorted;
     private Random rand;
     
     /**
@@ -19,7 +20,7 @@ abstract class  SortBase {
      */
     public SortBase(int n) {
         maxInt = n;
-        numbers = new ArrayList<>(maxInt-1);
+        numbers = new ArrayList<>(maxInt);
         perm();
 //        selectRandom();
         countInv(numbers);
@@ -39,7 +40,7 @@ abstract class  SortBase {
         Collections.shuffle(numbers);
     }
     
-    private void countInv(ArrayList<Integer> n) {
+    private void countInv(List<Integer> n) {
         inv = 0;
         for (int i = 0; i < n.size(); i++) {
             for (int j = i+1; j < n.size(); j++) {
@@ -54,7 +55,7 @@ abstract class  SortBase {
         return inv;
     }
     
-    public abstract ArrayList<Integer> sort(ArrayList<Integer> arr);
+    public abstract List<Integer> sort(List<Integer> arr);
     
     public void showNumbers() {
         System.out.println("Unsorted array");
@@ -63,7 +64,7 @@ abstract class  SortBase {
         System.out.println();
     }
     
-    public ArrayList<Integer> getNumbers() {
+    public List<Integer> getNumbers() {
         return numbers;
     }
     
@@ -75,11 +76,11 @@ abstract class  SortBase {
         System.out.println();
     }
     
-    public void setSorted(ArrayList<Integer> arr) {
+    public void setSorted(List<Integer> arr) {
         sorted = arr;
     }
     
-    public ArrayList<Integer> getSorted() {
+    public List<Integer> getSorted() {
         return sorted;
     }
     
