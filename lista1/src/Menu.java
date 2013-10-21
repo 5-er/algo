@@ -20,9 +20,9 @@ public class Menu {
 //        ms.showNumbers();
 //        ms.showSorted();
 //        System.out.println("Inversions "+ms.getInv()+" Comparisons "+ms.getComparsions());
-        HeapSort hs = new HeapSort(10);
+        HeapSort hs = new HeapSort(50);
         hs.setSorted(hs.sort(hs.getNumbers()));
         hs.showNumbers();
-        
+        hs.showSorted();
     }
 }
