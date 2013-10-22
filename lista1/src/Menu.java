@@ -20,9 +20,13 @@ public class Menu {
 //        ms.showNumbers();
 //        ms.showSorted();
 //        System.out.println("Inversions "+ms.getInv()+" Comparisons "+ms.getComparsions());
-        HeapSort hs = new HeapSort(50);
-        hs.setSorted(hs.sort(hs.getNumbers()));
-        hs.showNumbers();
-        hs.showSorted();
+//        HeapSort hs = new HeapSort(50);
+//        hs.setSorted(hs.sort(hs.getNumbers()));
+//        hs.showNumbers();
+//        hs.showSorted();
+        QuickSort qs = new QuickSort(50);
+        qs.setSorted(qs.sort(qs.getNumbers()));
+        qs.showNumbers();
+        qs.showSorted();
     }
 }
