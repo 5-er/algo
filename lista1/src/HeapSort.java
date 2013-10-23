@@ -14,6 +14,7 @@ public class HeapSort extends SortBase {
 
     private List array = new ArrayList();
     private int heapSize = 0;
+    private long comp = 0;
 
     public HeapSort(int n) {
         super(n);
@@ -35,6 +36,7 @@ public class HeapSort extends SortBase {
             heapSize--;
             heapify(array, 0);
         }
+        setComparsions(comp);
         return array;
     }
 
@@ -47,11 +49,13 @@ public class HeapSort extends SortBase {
 
     private void heapify(List<Integer> arr, int index) {
         int r = 2 * index + 2, l = 2 * index + 1, largest;
+        comp++;
         if (l <= heapSize && arr.get(l) > arr.get(index)) {
             largest = l;
         } else {
             largest = index;
         }
+        comp++;
         if (r <= heapSize && arr.get(r) > arr.get(largest)) {
             largest = r;
         }

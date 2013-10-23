@@ -12,7 +12,8 @@ import java.util.List;
  */
 public class QuickSort extends SortBase {
 
-    List<Integer> ar;
+    private List<Integer> ar;
+    private long comp = 0;
 
     public QuickSort(int n) {
         super(n);
@@ -22,6 +23,7 @@ public class QuickSort extends SortBase {
     public List<Integer> sort(List<Integer> arr) {
         ar = new ArrayList(arr);
         quickSort(ar, 0, ar.size() - 1);
+        setComparsions(comp);
         return ar;
     }
 
@@ -36,6 +38,7 @@ public class QuickSort extends SortBase {
     private int partition(List<Integer> arr, int start, int end) {
         int x = arr.get(end), i = start-1;
         for (int j = start; j <= end - 1; j++) {
+            comp++;
             if (arr.get(j) < x) {
                 i++;
                 swap(i, j);
